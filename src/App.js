@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Login';
@@ -12,6 +13,15 @@ function App() {
         <Route path="/calendar" element={<CalendarScreen />} />
       </Routes>
     </Router>
+=======
+import logo from './logo.svg';
+import './App.css';
+import Signin from './view/signinView/signin';
+
+function App() {
+  return (
+    <Signin />
+>>>>>>> 92f499abb30149b938e08c46644aa62253530ee5
   );
 }
 
