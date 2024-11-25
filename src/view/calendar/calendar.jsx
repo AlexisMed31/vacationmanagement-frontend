@@ -1,6 +1,33 @@
 import './newcalendar.css';
 
 function CalendarView() {
+  const weeks = () => {
+    return (
+      <>
+        <div className='week-sun'>
+          SUN
+        </div>
+        <div className='week-mon'>
+          MON
+        </div>
+        <div className='week-tue'>
+          TUE
+        </div>
+        <div className='week-wed'>
+          WED
+        </div>
+        <div className='week-thurs'>
+          THUR
+        </div>
+        <div className='week-fri'>
+          FRI
+        </div>
+        <div className='week-sat'>
+          SAT
+        </div>
+      </>
+    )
+  }
   const days = () => {
     const totaldays = 31;
     
@@ -28,27 +55,7 @@ function CalendarView() {
           </div>
         </div>
         <div className='container-left-week'>
-          <div className='week-sun'>
-            SUN
-          </div>
-          <div className='week-mon'>
-            MON
-          </div>
-          <div className='week-tue'>
-            TUE
-          </div>
-          <div className='week-wed'>
-            WED
-          </div>
-          <div className='week-thurs'>
-            THUR
-          </div>
-          <div className='week-fri'>
-            FRI
-          </div>
-          <div className='week-sat'>
-            SAT
-          </div>
+          {weeks()}
         </div>
         <div className='container-left-days'>
           {days()}
