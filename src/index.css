@@ -1,30 +1,33 @@
 /* Container Styling */
-@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo');
 
 * {
-  font-family: "Rowdies", sans-serif;
-  font-weight: 700;
+  font-family: 'Baloo', sans-serif;
   font-style: normal;
+  margin: 0px;
+  padding: 0px;
 }
 
 .container {
   display: flex;
   height: 100vh;
+  width: 100vw;
+  background-color: #98fb98;
 }
 
+
 .form-container {
-  flex: 1;
+  width: 50%;
   padding: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background-color: #fff;
-  box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2); /* Sombra derecha */
+  box-shadow: 20px 0px 15px rgba(0, 0, 0, 0.2); /* Sombra derecha */
 }
 
 .background {
-  flex: 1;
-  background: linear-gradient(to right, #98fb98, #98fb98);
+  width: 50%;
+  /* background-color: #98fb98; */
 }
 
 /* Form Title */
@@ -39,31 +42,33 @@
 
 /* Input Container */
 .input-container {
-  margin-bottom: 20px;
+  margin-bottom: 70px;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #333;
+.input-container input {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
 }
 
-input {
-  width: 60%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+.input-container input#username {
+  margin-top: 100px;
 }
 
 /* Button Styling */
-button {
+.login-button {
   width: 30%;
   padding: 12px 20px;
+  margin-top: 360px;
   font-size: 16px;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: white;
   background-color: #4caf50; /* Verde */
   border: none;
@@ -73,19 +78,19 @@ button {
 }
 
 /* Hover Effect */
-button:hover {
+.login-button:hover {
   background-color: #45a049; /* Más oscuro al pasar el mouse */
   transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
 
 /* Active Effect */
-button:active {
+.login-button:active {
   background-color: #3e8e41; /* Verde más oscuro */
   transform: scale(0.98); /* Un pequeño efecto de "presionado" */
 }
 
 /* Disabled State (opcional) */
-button:disabled {
+.login-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }

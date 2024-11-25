@@ -1,0 +1,33 @@
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  color: whitesmoke;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-container-left {
+  background-color: #CE2D4F;
+  width: 75%;
+  padding: 32px;
+}
+
+.main-container-right {
+  background-color: #CE6D8B;
+  width: 25%;
+}
+
+.container-left-year {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container-left-week {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
