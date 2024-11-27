@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import './Calendar2.css';
+import './newcalendar.css';
 
 function CalendarScreen() {
   const [date, setDate] = useState(new Date()); // Estado de la fecha actual

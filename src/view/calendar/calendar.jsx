@@ -1,6 +1,22 @@
+import { eachDayOfInterval, endOfMonth, format, getDay, isEqual, isSameDay, isSameMonth, isToday, parse, parseISO, startOfToday } from 'date-fns';
 import './newcalendar.css';
+import { useState } from 'react';
 
 function CalendarView() {
+
+  let today = startOfToday();
+  let [selectedDay, setSelectedDay] = useState(today)
+  let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
+  let firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
+  let days = eachDayOfInterval({
+    start: firstDayCurrentMonth,
+    end: endOfMonth(firstDayCurrentMonth),
+  })
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
+
   const weeks = () => {
     return (
       <>
@@ -28,18 +44,7 @@ function CalendarView() {
       </>
     )
   }
-  const days = () => {
-    const totaldays = 31;
-    
 
-    for (let i = 0; i <= totaldays; i++) {
-      return (
-        <div className = 'days'>
-          {i}
-        </div>
-      );
-    }
-  }
   return (
     <div className="main-container">
       <div className="main-container-left">
@@ -48,7 +53,7 @@ function CalendarView() {
             2023
           </div>
           <div className='year-current'>
-            JAN, 2024
+            {format(today, 'MMMM yyyy')}
           </div>
           <div className='year-next'>
             2025
@@ -58,7 +63,46 @@ function CalendarView() {
           {weeks()}
         </div>
         <div className='container-left-days'>
-          {days()}
+        {days.map((day, dayIdx) => (
+                <div
+                  key={day.toString()}
+                  className={classNames(
+                    dayIdx === 0 && colStartClasses[getDay(day)],
+                    'py'
+                  )}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setSelectedDay(day)}
+                    className={classNames(
+                      isEqual(day, selectedDay) && 'text-white',
+                      !isEqual(day, selectedDay) &&
+                        isToday(day) &&
+                        'text-red-500',
+                      !isEqual(day, selectedDay) &&
+                        !isToday(day) &&
+                        isSameMonth(day, firstDayCurrentMonth) &&
+                        'text-gray-900',
+                      !isEqual(day, selectedDay) &&
+                        !isToday(day) &&
+                        !isSameMonth(day, firstDayCurrentMonth) &&
+                        'text-gray-400',
+                      isEqual(day, selectedDay) && isToday(day) && 'bg-red-500',
+                      isEqual(day, selectedDay) &&
+                        !isToday(day) &&
+                        'bg-gray-900',
+                      !isEqual(day, selectedDay) && 'hover:bg-gray-200',
+                      (isEqual(day, selectedDay) || isToday(day)) &&
+                        'font-semibold',
+                      'mx-auto flex h-8 w-8 items-center justify-center rounded-full'
+                    )}
+                  >
+                    <time dateTime={format(day, 'yyyy-MM-dd')}>
+                      {format(day, 'd')}
+                    </time>
+                  </button>
+                </div>
+              ))}
         </div>
       </div>
       <div className="main-container-right">
@@ -66,5 +110,14 @@ function CalendarView() {
     </div>
   );
 }
+let colStartClasses = [
+  '',
+  'col-start-2',
+  'col-start-3',
+  'col-start-4',
+  'col-start-5',
+  'col-start-6',
+  'col-start-7',
+]
 
 export default CalendarView;
