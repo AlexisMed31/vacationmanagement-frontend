@@ -58,3 +58,7 @@
   background-color: #CE2D4F;
   border: none;
 }
+
+.py button:hover {
+  background-color: #4b0018;
+}

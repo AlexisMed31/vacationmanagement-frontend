@@ -6,7 +6,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    navigate('/calendar');
+    navigate('/calendarnew');
   };
 
   return (

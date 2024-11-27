@@ -7,6 +7,7 @@ function CalendarView() {
   let today = startOfToday();
   let [selectedDay, setSelectedDay] = useState(today)
   let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
+  let [currentyear, setCurrentYear] = useState(format(today, 'yyyy'))
   let firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
   let days = eachDayOfInterval({
     start: firstDayCurrentMonth,
@@ -15,6 +16,18 @@ function CalendarView() {
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
+  }
+
+  function nexYear() {
+    let thisYear = format(startOfToday(), 'yyyy')
+    let nextYear = parseInt(thisYear) + 1
+    return nextYear;
+  }
+
+  function lastYear() {
+    let thisYear = format(startOfToday(), 'yyyy')
+    let lastYear = parseInt(thisYear) - 1
+    return lastYear;
   }
 
   const weeks = () => {
@@ -50,13 +63,13 @@ function CalendarView() {
       <div className="main-container-left">
         <div className='container-left-year'>
           <div className='year-last'>
-            2023
+            {lastYear()}
           </div>
           <div className='year-current'>
             {format(today, 'MMMM yyyy')}
           </div>
           <div className='year-next'>
-            2025
+            {nexYear()}
           </div>
         </div>
         <div className='container-left-week'>
