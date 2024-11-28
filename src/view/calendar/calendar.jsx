@@ -9,6 +9,7 @@ function CalendarView() {
   let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
   let [currentyear, setCurrentYear] = useState(format(today, 'yyyy'))
   let firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
+  
   let days = eachDayOfInterval({
     start: firstDayCurrentMonth,
     end: endOfMonth(firstDayCurrentMonth),
