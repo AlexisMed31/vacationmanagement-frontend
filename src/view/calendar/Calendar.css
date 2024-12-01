@@ -1,49 +1,201 @@
-/* General styles */
-/* body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-  }
-   */
-  .calendar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .react-calendar {
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .react-calendar__tile {
-    padding: 10px;
-    background: #48dbee;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .react-calendar__tile--active {
-    background: #000000;
-    color: white;
-  }
-  
-  .react-calendar__tile:hover {
-    background: #e0e0e0;
-  }
-  
-  button {
-    color: #000000;
-    margin-top: 10px;
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}
+
+.logOut-button {
+  margin-left: 4.7%;
+  margin-top: 2%;
+  width: 25%;
+  height: 5%;
+}
+
+.logOut-button button {
+  background-color: #CE2D4F;
+  color: whitesmoke;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.calendar-container {
+  width: 75%;
+  height: 100%;
+  padding: 70px 0 70px 0;
+  background-color: whitesmoke;
+  color: #CE2D4F;
+}
+
+.react-calendar {
+  background-color: whitesmoke;
+  color: #CE2D4F;
+}
+
+.react-calendar__month-view__days button {
+  background-color: whitesmoke;
+  margin-bottom: 5px;
+  color: #CE2D4F;
+  height: 100px;
+  border: none;
+  font-size: 24px;
+}
+
+.react-calendar__month-view__days button:hover {
+  background-color: #CE6D8B;
+  color: whitesmoke;
+  /* border: none; */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.263);
+}
+
+.react-calendar__month-view {
+  height: 100%;
+}
+
+.react-calendar__month-view__weekdays {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 14.28571428571429%;
+  border: none;
+  background-color: whitesmoke;
+}
+
+.react-calendar__navigation {
+  background-color: whitesmoke;
+  color: #CE2D4F;
+  padding-left: 30%;
+  padding-right: 30%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.react-calendar__navigation button {
+  color: #CE2D4F;
+}
+
+.react-calendar__navigation__arrow {
+  font-size: 36px;
+}
+
+.react-calendar__navigation__prev-button {
+  padding-right: 40px;
+}
+
+.react-calendar__navigation__next-button {
+  padding-left: 40px;
+}
+
+.react-calendar__navigation button {
+  background-color: whitesmoke;
+  border: none;
+}
+
+.react-calendar__navigation__label {
+  font-size: 36px;
+}
+
+
+/* right side */
+
+.info-container-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 25%;
+  padding: 70px 0 70px 0;
+  background-color: #CE6D8B;
+}
+
+.employee-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 15%;
+  background-color: #CE6D8B;
+  color: whitesmoke;
+  margin-bottom: 40px;
+}
+
+.employee-name {
+  font-size: 40px;
+  margin-bottom: -10px;
+}
+
+.employee-role {
+  font-size: 20px;
+}
+
+.employee-id {
+  font-size: 16px;
+}
+
+.employee-linebreak {
+  width: 50%;
+  height: 2px;
+  background-color: whitesmoke;
+  /* margin: 0 0 0 10%; */
+}
+.employee {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.employee-vacation-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  /* height: 70%; */
+  width: 100%;
+  background-color: #CE6D8B;
+  color: whitesmoke;
+  margin-bottom: 40px;
+}
+
+.vacation-days {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.day-info {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  color: whitesmoke;
+  padding: 0 20px 0 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.day-data {
+  padding-left: 20px;
+}
+
+.day-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
